@@ -1,0 +1,25 @@
+{
+  "name": "@plunder/core",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Platform-agnostic logic shared by the web PWA, Electron and Expo apps.",
+  "exports": {
+    ".": "./src/index.ts",
+    "./mls": "./src/mls.ts"
+  },
+  "scripts": {
+    "typecheck": "tsc -p tsconfig.json",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "@noble/ciphers": "2.1.1",
+    "@noble/hashes": "^2.4.0",
+    "@supabase/supabase-js": "^2.117.3",
+    "ts-mls": "^1.6.4"
+  },
+  "devDependencies": {
+    "typescript": "~5.9.3",
+    "vitest": "^5.0.3"
+  }
+}

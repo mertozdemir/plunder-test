@@ -1,0 +1,22 @@
+{
+  "name": "@plunder/livekit-token",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Issues LiveKit join tokens to members of a voice channel. Runs on Railway.",
+  "scripts": {
+    "dev": "node --watch --experimental-strip-types src/main.ts",
+    "start": "node --experimental-strip-types src/main.ts",
+    "typecheck": "tsc -p tsconfig.json",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.117.3",
+    "livekit-server-sdk": "^2.19.1"
+  },
+  "devDependencies": {
+    "@types/node": "^22.19.0",
+    "typescript": "~5.9.3",
+    "vitest": "^5.0.3"
+  }
+}
