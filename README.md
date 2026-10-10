@@ -11,7 +11,7 @@ Oyuncular için davetli sunucular: yazılı sohbet, sesli sohbet ve ekran payla�
 | `services/livekit-token` | Railway'de çalışan küçük Node servisi. Supabase oturumunu doğrular, kullanıcı o sesli kanalın sunucusundaysa LiveKit jetonu verir. |
 | `supabase/migrations` | Şema ve erişim kuralları (RLS). Doğum tarihi saklanmaz, sadece yaş kontrolünün geçtiği kaydedilir. |
 | `supabase/tests` | Docker gerektirmeyen RLS testleri (`supabase/tests/run.sh`). |
-| `infra/livekit` | VPS üzerinde LiveKit + Caddy (TLS) + TURN ayarları. |
+| `infra/livekit` | VPS üzerinde LiveKit kurulumu (resmi üretici ile). |
 
 ## Yerelde çalıştırma
 
@@ -23,7 +23,7 @@ pnpm dev                              # http://localhost:5173 (telefondan aynı 
 
 Supabase: projede `supabase/migrations` içindeki SQL'i çalıştır (`supabase db push` ya da SQL editörü). Authentication > Email açık olmalı.
 
-Ses için: `infra/livekit` ile VPS'i kur, sonra token servisini başlat:
+Ses için: `infra/livekit/README.md` ile VPS'i kur, sonra token servisini başlat:
 
 ```bash
 SUPABASE_URL=... SUPABASE_ANON_KEY=... LIVEKIT_API_KEY=... LIVEKIT_API_SECRET=... \

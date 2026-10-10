@@ -1,5 +1,9 @@
 {
   "$schema": "https://railway.com/railway.schema.json",
-  "build": { "builder": "DOCKERFILE", "dockerfilePath": "services/livekit-token/Dockerfile" },
+  "build": {
+    "builder": "DOCKERFILE",
+    "dockerfilePath": "services/livekit-token/Dockerfile",
+    "watchPatterns": ["services/livekit-token/**", "pnpm-lock.yaml"]
+  },
   "deploy": { "healthcheckPath": "/health", "restartPolicyType": "ON_FAILURE" }
 }

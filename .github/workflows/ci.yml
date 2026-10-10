@@ -6,10 +6,11 @@ on:
 jobs:
   check:
     runs-on: ubuntu-latest
+    timeout-minutes: 15
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - uses: pnpm/action-setup@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v5
         with:
           node-version: 22
           cache: pnpm
@@ -19,7 +20,8 @@ jobs:
       - run: pnpm build
   database:
     runs-on: ubuntu-latest
+    timeout-minutes: 10
     steps:
-      - uses: actions/checkout@v4
-      - run: sudo apt-get update && sudo apt-get install -y postgresql
+      - uses: actions/checkout@v5
+      # PostgreSQL ships preinstalled on GitHub's Ubuntu runners; apt mirrors can hang, so don't install.
       - run: supabase/tests/run.sh
